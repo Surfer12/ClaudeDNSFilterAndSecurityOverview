@@ -1,0 +1,22 @@
+graph TD
+    A[Client Application] -->|Encrypted Request| B[WireGuard VPN Layer]
+    B -->|Tunnel Interface| C[DNS Security Layer]
+    C -->|DNS Resolution| D{DNS Implementation}
+    D -->|Option A| E[DNSFilter]
+    D -->|Option B| F[Cloudflare DNS]
+    E -->|SSL Inspection| G[Content Filtering]
+    F -->|DNS over HTTPS| H[Privacy Preserved]
+    G -->|Filtered Traffic| I[Internet Gateway]
+    H -->|Encrypted Traffic| I
+    
+    subgraph "Security Properties"
+    J[Confidentiality]
+    K[Integrity]
+    L[Availability]
+    end
+    
+    subgraph "Protocol Stack"
+    M[Application Layer]
+    N[Transport Layer]
+    O[Network Layer]
+    end

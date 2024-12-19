@@ -1,0 +1,47 @@
+flowchart TD
+    subgraph "Threat Sources"
+        A[Network Threats]
+        B[Protocol Vulnerabilities]
+        C[Implementation Weaknesses]
+    end
+
+    subgraph "Analysis Framework"
+        D[Threat Assessment]
+        E[Risk Evaluation]
+        F[Impact Analysis]
+    end
+
+    subgraph "Mitigation Strategies"
+        G[Protocol Hardening]
+        H[Implementation Security]
+        I[Monitoring Enhancement]
+    end
+
+    A --> D
+    B --> D
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    F --> H
+    F --> I
+
+    subgraph "Security Controls"
+        J[Prevention]
+        K[Detection]
+        L[Response]
+    end
+
+    G --> J
+    H --> K
+    I --> L
+
+    subgraph "Validation"
+        M[Security Testing]
+        N[Performance Impact]
+        O[Cognitive Load]
+    end
+
+    J --> M
+    K --> N
+    L --> O

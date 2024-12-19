@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant C as Client
+    participant W as WireGuard
+    participant D as DNSFilter
+    participant S as Server
+    participant CA as Certificate Authority
+    
+    C->>W: Initial Request
+    W->>D: Encrypted Traffic
+    D->>CA: Certificate Validation
+    CA-->>D: Validation Response
+    D->>S: Forward Request
+    S-->>D: Server Response
+    D-->>W: Processed Response
+    W-->>C: Final Response
+    
+    Note over D,CA: Certificate Chain Verification
+    Note over W,D: Encryption Layer
+    Note over C,W: Client Security Context

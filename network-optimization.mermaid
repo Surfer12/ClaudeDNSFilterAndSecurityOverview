@@ -1,0 +1,27 @@
+flowchart TD
+    subgraph "Physical Layer"
+        A[Network Interface] -->|1000baseT| B[Full Duplex]
+    end
+
+    subgraph "Tunnel Configuration"
+        C[WireGuard MTU 1420] -->|Encryption| D[Packet Processing]
+        D -->|Optimization| E[Performance Monitoring]
+    end
+
+    subgraph "Security Stack"
+        F[DNS Filter] -->|Privacy| G[WARP Integration]
+        G -->|Security| H[Final Hop]
+    end
+
+    B -->|Data Flow| C
+    E -->|Metrics| F
+
+    subgraph "Performance Metrics"
+        I[Latency <100ms]
+        J[Throughput >900Mbps]
+        K[Packet Loss <0.1%]
+    end
+
+    H -->|Monitoring| I
+    H -->|Monitoring| J
+    H -->|Monitoring| K
